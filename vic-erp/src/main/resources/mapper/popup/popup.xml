@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.5//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vic.erp.project.mapper.popup.VctProvisionMapper">
+<select id="popUpVctOrg2" resultType="com.vic.erp.project.VO.EmployeeVO">
+	select
+		 o.org_no , org_nm
+	from 
+		vicerp.org o 
+	order by 
+		o.org_no
+	asc 
+</select>
+
+<select id="popUpVctPvs2" resultType="com.vic.erp.project.VO.EmployeeVO">
+	select
+		e.emp_no , e.emp_nm , e.blng_org_no , e.crnk_cd , o.org_no 
+	from 
+		vicerp.emp e
+	join 
+		vicerp.org o 
+	on
+		e.blng_org_no = o.org_no 
+	order by 
+		e.crnk_cd 
+	desc 
+</select>
+</mapper>

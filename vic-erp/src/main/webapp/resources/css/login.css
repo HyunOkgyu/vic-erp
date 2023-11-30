@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+body {
+	height: 100%;
+	background-image:url('${path}/resources/img/—Pngtree—nature leaves background_1161551.png');
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	padding-left: 100px;
+}
+
+span {
+	font-weight: bold;
+}
+
+.log-c {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 11vmax;
+}
+
+h1 {
+	color: #171516;
+	font-size: 4vmax;
+	margin: 0;
+}
+
+.lgin {
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+.log-i div>input {
+	margin: 0.5vmax;
+	width: 13vmax;
+	height: 1.6vmax;
+	border: 2px solid #F3F6F9;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+input::-webkit-input-placeholder {
+	color: #35B62C;
+	font-weight: bold;
+}
+
+.log-btn {
+	margin-top: 2vmax;
+	display: flex;
+	justify-content: center;
+}
+
+.log-btn>button {
+	/* padding: 0.3vmax 5.3vmax 0.3vmax 5.3vmax; */
+	color: white;
+	border: 2px solid #171516;
+	border-radius: 5px;
+	background: #171516;
+	font-size: 0.8vmax;
+	cursor: pointer;
+}

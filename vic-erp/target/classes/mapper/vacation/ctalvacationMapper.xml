@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.5//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vic.erp.project.mapper.vacation.CtalVacationMapper">
+
+  <!-- 약정휴가 지급 프로시저 호출 -->
+  <insert id="CreateCtalVact" parameterType="com.vic.erp.project.VO.CtalVactVO">
+    CALL vicerp.sp_create_ctal_vact(
+    #{empNo, mode=IN, jdbcType=VARCHAR},
+    #{payEmpNo, mode=IN, jdbcType=VARCHAR},
+    #{vactPayUseDivDtlCd, mode=IN, jdbcType=VARCHAR},
+    #{vactDcnt, mode=IN, jdbcType=NUMERIC},
+    #{pjtStDt, mode=IN, jdbcType=VARCHAR},
+    #{pjtEdDt, mode=IN, jdbcType=VARCHAR},
+    #{custNm, mode=IN, jdbcType=VARCHAR},
+    #{pjtNm, mode=IN, jdbcType=VARCHAR},
+    #{yosYcnt, mode=IN, jdbcType=INTEGER},
+    #{remark, mode=IN, jdbcType=VARCHAR},
+    #{vactPayStDt, mode=IN, jdbcType=VARCHAR}
+    )
+  </insert>
+
+</mapper>
+
+
