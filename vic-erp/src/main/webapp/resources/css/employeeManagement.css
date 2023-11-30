@@ -1,0 +1,79 @@
+.ul, li{
+	list-style-type:none;
+}
+.em-nav{
+	margin-top:100px;
+	width: 100%;
+}
+.em-nav>ul{
+	display:flex;
+	flex-direction : row;
+	padding:1vmax;
+	float:right;
+}
+.em-nav>ul li:nth-child(1){
+	margin-top:0.4vmax;
+	margin-left:1vmax;
+}
+.em-nav>ul li:nth-child(2){
+	margin-top:0.4vmax;
+	margin-left:3vmax;
+}
+.em-nav>ul li:nth-child(3){
+	margin-top:0.2vmax;
+	margin-left:1vmax;
+}
+.em-nav>ul li:nth-child(4){
+	margin-left:3vmax;
+}
+.em-table{
+	width:60vmax;
+	margin-top:1vmax;
+}
+.em-table > table{
+	border-collapse: collapse;
+	width:100%;
+}
+tr{
+	border-bottom: 2px solid #F3F6F9;
+	width:100%;
+}
+.emp-chng-btn, .emp-delete-btn{
+	border:none;
+}
+.em-table td{
+	padding: 0.7vmax 0.7vmax;
+	font-size:0.8vmax;
+}
+
+.show-list-btn{
+	width:3vmax;
+	height:2vmax;
+	font-size:0.5vmax;
+	background:#009CFF;
+	border:1px solid #009CFF;
+	border-radius:5px;
+	color:white;
+}
+.create_employee{
+	cursor:pointer;
+}
+.pageNum{
+	display:flex; 
+	justify-content:center; 
+	text-align: center; 
+	padding-top: 0.5vmax; 
+	padding-bottom: 0.5vmax; 
+	width: 100%; 
+}
+.pageNum > div >button{
+	border:none;
+	width:3vmax;
+	height:2vmax;
+	cursor:pointer;
+	font-size:1vmax;
+}
+
+.active-button {
+  background-color: white; /* Add any other styling you want */
+}

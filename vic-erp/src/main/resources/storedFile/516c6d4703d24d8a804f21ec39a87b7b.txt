@@ -1,0 +1,60 @@
+
+*게시판
+글쓰기
+글보기
+댓글
+date 설정
+검색 기능
+
+
+*휴가현황
+리스트 펑션 수정
+
+*직원관리
+페이지네이션 <>수정
+
+
+
+휴가현황
+fncUseVct2 월차 사용개수가 안맞음
+휴가관리
+
+
+	        // 첨부 파일 처리
+	        List<Map<String, Object>> attachFileList = new ArrayList<>();
+	        Map<String, List<MultipartFile>> fileMap = mpRequest.getMultiFileMap();
+	        for (List<MultipartFile> multipartFiles : fileMap.values()) {
+	            for (MultipartFile multipartFile : multipartFiles) {
+	            if (!multipartFile.isEmpty()) {
+	                String originalFileName = ((MultipartFile) multipartFile).getOriginalFilename();
+	                String storedFileName = FileUtils.getRandomString() + fileUtils.getFileExtension(originalFileName);
+	                String filePath = FileUtils.FILE_STORAGE_PATH + storedFileName;
+	                String atch_file_use_div_cd = "y";
+	                // 파일 저장
+	                try {
+	                    File file = new File(filePath);
+	                    ((MultipartFile) multipartFile).transferTo(file);
+
+	                    // 파일 정보 저장
+	                    Map<String, Object> fileMap1 = new HashMap<>();
+	                    fileMap1.put("emp_no", make_emp_no);
+	                    fileMap1.put("atch_file_nm", originalFileName);
+	                    fileMap1.put("stored_file_nm", storedFileName);
+	                    fileMap1.put("atch_file_size", multipartFile.getSize());
+	                    fileMap1.put("atch_file_path_nm", filePath);
+	                    fileMap1.put("atch_file_use_div_cd", atch_file_use_div_cd);
+	                    fileMap1.put("reg_dttm", reg_dttm);
+	                    fileMap1.put("reg_emp_no", reg_emp_no);
+	                    fileMap1.put("modf_dttm", modf_dttm);
+	                    fileMap1.put("modf_emp_no", modf_emp_no);
+	                    attachFileList.add(fileMap1);
+	                } catch (IOException e) {
+	                    // 파일 저장 중 오류 처리
+	                    e.printStackTrace();
+	                    // 실패 처리 로직 추가
+	                }
+	            	}
+	            }
+	        }
+	        // 첨부 파일 정보를 게시글 객체에 추가
+	        board.setFile(attachFileList);
