@@ -31,7 +31,7 @@ public class LoginController {
 	public String loginPage() {
 		return "/login/login";
 	}
-
+    
 	@RequestMapping("/login/Error")
 	public String loginError() {
 		return "/login/loginError";
